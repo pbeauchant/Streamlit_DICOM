@@ -27,7 +27,7 @@ if collection_selected is not None :
         #st.markdown(json.loads(tcia_client.get_getSOPInstanceUIDs(SeriesInstanceUID =my_patient_studies[0]['SeriesInstanceUID']).read()))
         SOPInstanceUID = query_to_list(tcia_client.get_getSOPInstanceUIDs(SeriesInstanceUID =my_patient_studies[0]['SeriesInstanceUID']),'SOPInstanceUID')
         st.markdown('----')
-        url_dicom = "https://services.cancerimagingarchive.net/services/v4/TCIA/query/getSingleImage?SeriesInstanceUID={}&SOPInstanceUID={}".format(my_patient_studies[0]['SeriesInstanceUID'],SOPInstanceUID[0])
+        url_dicom = "https://services.cancerimagingarchive.net/services/v4/TCIA/query/getSingleImage?SeriesInstanceUID={}&SOPInstanceUID={}".format(my_patient_studies[0]['SeriesInstanceUID'],SOPInstanceUID[len(SOPInstanceUID)//2])
 
         f = urllib.request.urlopen(url_dicom)
         myfile = f.read()
