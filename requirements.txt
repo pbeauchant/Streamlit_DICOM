@@ -1,4 +1,4 @@
-matplotlib==2.2.2
-streamlit==0.72.0
-pydicom==2.0.0.dev0
-numpy==1.19.4
+matplotlib
+streamlit
+pydicom
+numpy
